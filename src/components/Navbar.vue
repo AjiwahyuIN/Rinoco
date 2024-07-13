@@ -13,7 +13,7 @@ import SupportIcon from './icons/IconSupport.vue'
             <img src="../assets/images/brand.svg" alt="">
             <span>Rinoco</span>
         </router-link>
-        <router-link class="button-yellow">
+        <router-link to="/" class="button-yellow">
             Connect Wallet
         </router-link>
     </div>
