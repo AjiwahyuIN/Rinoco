@@ -7,24 +7,16 @@ import Footer from '../components/Footer.vue'
 
 <template>
   <main>
-    <div class="container c-nav">
-      <Navbar/>
-    </div>
+    <Navbar/>
   </main>
-  <main class="sec-hero">
-    <div class="container c-hero">
-      <Hero/>
-    </div>
+  <main>
+    <Hero/>
   </main>
-  <main style="background:#fff;">
-    <div class="container">
-      <Banner/>
-    </div>
+  <main>
+    <Banner/>
   </main>
-  <main style="background:#fff;">
-    <div class="container">
-      <Footer/>
-    </div>
+  <main>
+    <Footer/>
   </main>
 </template>
 

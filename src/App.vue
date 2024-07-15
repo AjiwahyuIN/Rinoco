@@ -11,18 +11,38 @@ import HelloWorld from './components/HelloWorld.vue'
 @font-face {
     font-family: "Artegra Soft Condensed";
     src: url('../src/assets/fonts/ArtegraSoftCn-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
 }
 @font-face {
-    font-family: "Artegra Soft Condensed 500";
+    font-family: "Artegra Soft Condensed";
     src: url('../src/assets/fonts/ArtegraSoftCn-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Artegra Soft Condensed";
+    src: url('../src/assets/fonts/ArtegraSoftCn-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Artegra Soft Condensed";
+    src: url('../src/assets/fonts/ArtegraSoftCn-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
 }
 @font-face {
     font-family: "Artegra Soft Condensed 900";
     src: url('../src/assets/fonts/ArtegraSoftCn-ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
 }
 @font-face {
     font-family: "Yellow Candy";
     src: url('../src/assets/fonts/Yellow Candy.otf');
+    font-weight: 400;
+    font-style: normal;
 }
 header {
   line-height: 1.5;

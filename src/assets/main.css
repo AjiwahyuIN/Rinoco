@@ -10,6 +10,10 @@ a {
   height: unset;
   text-decoration: none;
 }
+section {
+  width: 100%;
+  margin: 0 auto
+}
 .container{
   width: 100%;
   max-width: 1440px;
@@ -29,6 +33,6 @@ a {
   font-family: "Artegra Soft Condensed";
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 20px; /* 125% */
 }

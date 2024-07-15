@@ -1,20 +1,27 @@
 <template>
-    <div class="banner">
-        <div class="top-banner">
-            <img src="../assets/images/kon.png" alt="" width="112px">
-            <img src="../assets/images/kon.png" alt="" width="112px">
+    <section class="sec-banner">
+        <div class="container">
+            <div class="banner">
+                <div class="top-banner">
+                    <img src="../assets/images/kon.png" alt="" width="112px">
+                    <img src="../assets/images/kon.png" alt="" width="112px">
+                </div>
+                <div class="banner-content">
+                    <span>Check if your wallet is registered in our system</span>
+                    <form action="">
+                        <input type="text" placeholder="Enter wallet here...">
+                        <button type="submit">Enter</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="banner-content">
-            <span>Check if your wallet is registered in our system</span>
-            <form action="">
-                <input type="text" placeholder="Enter wallet here...">
-                <button type="submit">Enter</button>
-            </form>
-        </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>
+.sec-banner {
+    background: #fff;
+}
 .banner {
     width: 100%;
     padding-block: 80px;
@@ -45,7 +52,7 @@
     font-family: "Artegra Soft Condensed";
     font-size: 32px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
 }
 .banner-content form {
@@ -72,7 +79,7 @@
     font-family: "Artegra Soft Condensed";
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
     cursor: pointer;
 }
@@ -84,7 +91,7 @@
 font-family: "Artegra Soft Condensed";
 font-size: 24px;
 font-style: normal;
-font-weight: 400;
+font-weight: 600;
 line-height: normal;
 }
 </style>

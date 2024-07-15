@@ -60,16 +60,14 @@
 
 body {
   /* min-height: 100vh; */
-  background: rgba(88, 192, 211, 0.5);
-  background: linear-gradient(180deg, rgba(66, 132, 145, 1) 0%, rgba(112,226,247,1) 70%, rgba(255,255,255,1) 100%);
+  background:#fff;
+  /* background: linear-gradient(180deg, rgba(66, 132, 145, 1) 0%, rgba(112,226,247,1) 70%, rgba(255,255,255,1) 100%); */
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
   'Artegra Soft Condensed',
-  'Artegra Soft Condensed Medium',
-  'Artegra Soft Condensed ExtraBold',
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -82,7 +80,6 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

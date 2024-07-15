@@ -1,27 +1,41 @@
 <template>
-    <div class="heading-wrapper">
-        <h3>Welcome to the <span>world</span> of</h3>
-        <img src="../assets/images/Rinoco.svg" alt="">
-    </div>
-    <div class="heading-content">
-        <div class="heading-content-wrapper">
-            <h4>Join us on a journey through a vast and breathtaking realm inhabited by the extraordinary creatures known as Rinocos. These magnificent beings come in a dazzling array of types and species—some are friendly, others more formidable, ranging from the tiniest critters to colossal giants.</h4>
-            <h4>One thing is certain:<span> the world of Rinoco</span> is brimming with adventure and wonders just waiting to be discovered. Explore, encounter, and immerse yourself in the magical experiences this enchanting world has to offer.</h4>
-        </div>
-        <div class="hero-button-wrapper">
-            <router-link to="/">
-                <div class="hero-button">
-                    Join the community
-                    <div class="hero-button-ic">
-                        <img src="../assets/images/Iconly/Bold/Arrow - Right.svg" alt="">
-                    </div>
+    <section class="sec-hero">
+        <div class="container">
+            <div class="heading-wrapper">
+                <h3>Welcome to the <span>world</span> of</h3>
+                <img src="../assets/images/Rinoco.svg" alt="">
+
+            </div>
+            <div class="heading-content">
+                <div class="heading-content-wrapper">
+                    <h4>Join us on a journey through a vast and breathtaking realm inhabited by the extraordinary creatures known as Rinocos. These magnificent beings come in a dazzling array of types and species—some are friendly, others more formidable, ranging from the tiniest critters to colossal giants.</h4>
+                    <h4>One thing is certain:<span> the world of Rinoco</span> is brimming with adventure and wonders just waiting to be discovered. Explore, encounter, and immerse yourself in the magical experiences this enchanting world has to offer.</h4>
                 </div>
-            </router-link>
+                <div class="hero-button-wrapper">
+                    <router-link to="/">
+                        <div class="hero-button">
+                            Join the community
+                            <div class="hero-button-ic">
+                                <img src="../assets/images/Iconly/Bold/Arrow - Right.svg" alt="">
+                            </div>
+                        </div>
+                    </router-link>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>
+.sec-hero {
+    background-image: url('../assets/images/Page Container.png');
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 430px;
+    padding-top: 100px;
+    margin-top: -100px;
+}
 .heading-wrapper {
     padding-top: 64px;
     position: relative;
@@ -35,10 +49,10 @@
 }
 .heading-wrapper h3{
     color: #FFF;
-    font-family: "Artegra Soft Condensed ExtraBold";
+    font-family: "Artegra Soft Condensed";
     font-size: 32px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
     margin-bottom: -40px;
 }
@@ -51,7 +65,7 @@
     font-family: "Artegra Soft Condensed";
     font-size: 32px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
 }
 .heading-content {
@@ -80,7 +94,7 @@
     font-family: "Artegra Soft Condensed";
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
 }
 .heading-content-wrapper h4 span {
@@ -89,7 +103,7 @@
     font-family: "Artegra Soft Condensed";
     font-size: 20px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
     line-height: normal;
 }
 .hero-button {
@@ -102,7 +116,7 @@
     font-family: "Artegra Soft Condensed";
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
     border-radius: 100px;
     background: #FFF;
