@@ -1,5 +1,5 @@
 
-<template>
+<template id="HeroMint">
     <section class="sec-hero-mint">
         <div class="container">
             <div class="hero-mint">
@@ -11,21 +11,21 @@
                         <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
                     </div>
                     <div class="card-slider-button">
-                        <button class="btn-details trigger">Details</button>
+                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
                         <button class="button-yellow">Adopt This</button>
                     </div>
                 </div>
             </div>
-            <div class="modal">
+            <div class="modal" v-if="showModal">
                 <div class="modal-content">
                     <div class="modal-tab">
                         <div id="tabs" class="modal-tab-btn">
-                            <button class="current" data-tab="tab-1">About</button>
-                            <button data-tab="tab-2">Base Stats</button>
-                            <button data-tab="tab-3">Moves</button>
+                            <button :class="tabState == 1 ? 'current' : ''" data-tab="tab-1" v-on:click="switchTab(1)">About</button>
+                            <button :class="tabState == 2 ? 'current' : ''" data-tab="tab-2" v-on:click="switchTab(2)">Base Stats</button>
+                            <button :class="tabState == 3 ? 'current' : ''" data-tab="tab-3" v-on:click="switchTab(3)">Moves</button>
                         </div>
                         <div class="modal-tab-content">
-                            <div class="tab-content current" id="tab-1">
+                            <div :class="tabState == 1 ? 'tab-content current' : 'tab-content'"  id="tab-1">
                                 <div class="about-tab">
                                     <h4>description</h4>
                                     <div class="about-tab-txt-wrapper">
@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-content" id="tab-2">
+                            <div :class="tabState == 2 ? 'tab-content current' : 'tab-content'" id="tab-2">
                                 <div class="base-tab">
                                     <h4>POWER</h4>
                                     <div class="base-content">
@@ -137,7 +137,7 @@
                                     <span>The effectiveness of each type of Aria Windrider</span>
                                 </div>
                             </div>
-                            <div class="tab-content" id="tab-3">
+                            <div :class="tabState == 3 ? 'tab-content current' : 'tab-content'" id="tab-3">
                                 <div class="moves-tab">
                                     <div class="moves-heading">
                                         <h4>DAMAGE</h4>
@@ -184,7 +184,7 @@
 
                     </div>
                     <div class="modal-img-wrapper">
-                        <div class="close-button"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
+                        <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
                         <div class="modal-img-content">
                             <img src="../assets/images/Frame 1321315713.png" alt="">
                             <h2>Aria Windrider</h2>
@@ -196,8 +196,34 @@
             </div>
         </div>
     </section>
-    <Footer/>
+    <!-- <Footer/> -->
 </template>
+
+
+
+<script>
+  export default{
+    name: 'HeroMint',
+    data(){
+        return{
+            showModal: false,
+            tabState: 1
+        }
+    },
+    methods: {
+        toggleModal(){
+            this.showModal = !this.showModal
+        },
+        switchTab(state){
+            this.tabState = state
+        }
+    }
+  }
+</script>
+
+
+
+
 
 <style scoped>
 .moves-tab {
@@ -529,8 +555,8 @@
     height: 100%;
     background: rgba(71, 141, 154, 0.30);
     backdrop-filter: blur(25px);
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0;
+    visibility: hidden; */
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
    
@@ -612,12 +638,12 @@
 .close-button:hover {
     background-color: darkgray;
 }
-.show-modal {
+/* .show-modal {
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
+} */
 
 
 .sec-hero-mint {    
@@ -716,38 +742,3 @@
 }
 </style>
 
-<script>
-
-$(document).ready(()=>{
-var modal = document.querySelector(".modal");
-var trigger = document.querySelector(".trigger");
-var closeButton = document.querySelector(".close-button");
-
-function toggleModal() {
-    modal.classList.toggle("show-modal");
-}
-
-function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
-    }
-}
-
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
-
-
-$('#tabs button').click(function(){
-    var tab_id = $(this).attr('data-tab');
-
-    $('#tabs button').removeClass('current');
-    $('.tab-content').removeClass('current');
-
-    $(this).addClass('current');
-    $("#"+tab_id).addClass('current');
-})
-
-});
-
-</script>
