@@ -11,8 +11,8 @@
                         <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
                     </div>
                     <div class="card-slider-button">
-                        <a href="#" class="btn-details trigger">Details</a>
-                        <a href="#" class="button-yellow">Adopt This</a>
+                        <button class="btn-details trigger">Details</button>
+                        <button class="button-yellow">Adopt This</button>
                     </div>
                 </div>
             </div>
@@ -27,14 +27,158 @@
                         <div class="modal-tab-content">
                             <div class="tab-content current" id="tab-1">
                                 <div class="about-tab">
-                                    tab 1
+                                    <h4>description</h4>
+                                    <div class="about-tab-txt-wrapper">
+                                        <div class="about-tab-txt">
+                                            <div class="about-tab-txt-left">
+                                                <h5>SPECIES:</h5>
+                                                <span>Seed</span>
+                                            </div>
+                                            <div class="about-tab-txt-left">
+                                                <h5>ABILITIES:</h5>
+                                                <span>Overgrow, Chlorophyl</span>
+                                            </div>
+                                        </div>
+                                        <div class="about-tab-txt">
+                                            <div class="about-tab-txt-right">
+                                                <h5>HEIGHT:</h5>
+                                                <span>0.70 cm</span>
+                                            </div>
+                                            <div class="about-tab-txt-right">
+                                                <h5>WEIGHT:</h5>
+                                                <span>15.2 lbs (6.9 kg)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="about-tab">
+                                    <h4>Breeding</h4>
+                                    <div class="about-tab-txt-wrapper">
+                                        <div class="about-tab-txt">
+                                            <div class="about-tab-txt-left">
+                                                <h5>MALE:</h5>
+                                                <span>875%</span>
+                                            </div>
+                                            <div class="about-tab-txt-left">
+                                                <h5>FEMALE:</h5>
+                                                <span>12.5%</span>
+                                            </div>
+                                        </div>
+                                        <div class="about-tab-txt">
+                                            <div class="about-tab-txt-right">
+                                                <h5>EGG GROUPS:</h5>
+                                                <span>Monster</span>
+                                            </div>
+                                            <div class="about-tab-txt-right">
+                                                <h5>EGG CYCLE:</h5>
+                                                <span>Grass</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-content" id="tab-2">
-                                <span>tab 2</span>
+                                <div class="base-tab">
+                                    <h4>POWER</h4>
+                                    <div class="base-content">
+                                        <div class="base-content-wrapper">
+                                            <span>HP</span>
+                                            <div class="base-progress">
+                                                <div class="red-value value-1"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                        <div class="base-content-wrapper">
+                                            <span>ATTACK</span>
+                                            <div class="base-progress">
+                                                <div class="green-value value-2"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                        <div class="base-content-wrapper">
+                                            <span>DEFENSE</span>
+                                            <div class="base-progress">
+                                                <div class="red-value value-3"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                        <div class="base-content-wrapper">
+                                            <span>SP. ATK</span>
+                                            <div class="base-progress">
+                                                <div class="green-value value-4"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                        <div class="base-content-wrapper">
+                                            <span>SP. DEF</span>
+                                            <div class="base-progress">
+                                                <div class="green-value value-5"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                        <div class="base-content-wrapper">
+                                            <span>SPEED</span>
+                                            <div class="base-progress">
+                                                <div class="red-value value-6"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                        <div class="base-content-wrapper">
+                                            <span>TOTAL</span>
+                                            <div class="base-progress">
+                                                <div class="green-value value-7"></div>
+                                            </div>
+                                            <span>45</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="base-tab">
+                                    <h4>TYPE DEFENSES</h4>
+                                    <span>The effectiveness of each type of Aria Windrider</span>
+                                </div>
                             </div>
                             <div class="tab-content" id="tab-3">
-                                <span>tab 3</span>
+                                <div class="moves-tab">
+                                    <div class="moves-heading">
+                                        <h4>DAMAGE</h4>
+                                        <div class="moves-banner">
+                                            Normal moves
+                                        </div>
+                                    </div>
+                                    <div class="moves-content">
+                                        <div class="moves-content-txt">
+                                            <span>BASE DAMAGE</span>
+                                            <h3>9000</h3>
+                                        </div>
+                                        <div class="moves-content-txt">
+                                            <span>DPS</span>
+                                            <h3>4736.8</h3>
+                                        </div>
+                                        <div class="moves-content-txt">
+                                            <span>EPS</span>
+                                            <h3>-13.2</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="moves-tab">
+                                    <div class="moves-heading">
+                                        <h4>pvp damage</h4>
+                                    </div>
+                                    <div class="moves-content">
+                                        <div class="moves-content-txt">
+                                            <span>BASE DAMAGE</span>
+                                            <h3>0</h3>
+                                        </div>
+                                        <div class="moves-content-txt">
+                                            <span>DPS</span>
+                                            <h3>0</h3>
+                                        </div>
+                                        <div class="moves-content-txt">
+                                            <span>EPS</span>
+                                            <h3>0</h3>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -56,6 +200,171 @@
 </template>
 
 <style scoped>
+.moves-tab {
+    border-radius: 32px;
+    background: #FFF;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+.moves-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.moves-heading h4 {
+    color: #304755;
+    font-family: "Yellow Candy";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.moves-banner {
+    border-radius: 100px;
+    background: #2BA7B7;
+    padding: 4px 10px;
+    color: #FFF;
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.moves-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.moves-content-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 120px;
+}
+.moves-content-txt span {
+    color: rgba(0, 73, 88, 0.80);
+    text-align: center;
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.moves-content-txt h3 {
+    color: #30323D;
+    text-align: center;
+    font-family: "Artegra Soft Condensed";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.base-tab h4 {
+    color: #304755;
+    font-family: "Yellow Candy";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.base-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+}
+.base-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+.base-content-wrapper span:nth-child(1) {
+    color: #30323D;
+    text-align: left;
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+    width: 72px;   
+}
+.base-content-wrapper span:nth-last-child(1) {
+    color: #30323D;
+    text-align: right;
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+    width: 48px;   
+}
+.base-progress {
+    height: 10px;
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    border-radius: 100px;
+    background: rgba(48, 50, 61, 0.08);
+}
+.red-value{
+    border-radius: 100px;
+    background: #FB6C6C;
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.green-value{
+    border-radius: 100px;
+    background: rgba(71, 209, 178, 1);
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.red-value.value-1{
+    max-width: 140px;
+}
+.green-value.value-2{
+    max-width: 230px;
+}
+.red-value.value-3{
+    max-width: 160px;
+}
+.green-value.value-4{
+    max-width: 250px;
+}
+.green-value.value-5{
+    max-width: 250px;
+}
+.red-value.value-6{
+    max-width: 150px;
+}
+.green-value.value-7{
+    max-width: 260px;
+}
+.base-tab {
+    border-radius: 32px;
+    background: #FFF;
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 16px;
+}
 .modal-tab {
     border-radius: 48px;
     border: 1px solid #FFF;
@@ -63,6 +372,7 @@
     backdrop-filter: blur(100px);
     padding: 24px;
     min-width: 572px;
+    min-height: 100%;
 }
 .modal-tab-btn {
     border-radius: 100px;
@@ -86,10 +396,11 @@
     font-family: "Artegra Soft Condensed";
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 20px; /* 125% */
     border: none;
     border-radius: 100px;
+    cursor: pointer;
 }
 .modal-tab-btn button.current {
     background: #FFF;
@@ -103,9 +414,99 @@
 }
 .tab-content {
     display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-top: 32px;
 }
 .tab-content.current {
     display: flex;
+}
+.about-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    border-radius: 32px;
+    background: #FFF;
+    padding: 24px;
+}
+.about-tab h4 {
+    color: #304755;
+    font-family: "Yellow Candy";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.about-tab-txt-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 56px;
+    align-items: flex-start;
+    width: 100%;
+}
+.about-tab-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+.about-tab-txt-left h5 {
+    color: rgba(0, 73, 88, 0.80);
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 72px;
+}
+.about-tab-txt-left span {
+    color: #30323D;
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.about-tab-txt-right h5 {
+    color: rgba(0, 73, 88, 0.80);
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 56px;
+}
+.about-tab:nth-child(2) .about-tab-txt-right h5 {
+    width: 90px;
+}
+.about-tab-txt-right span {
+    color: #30323D;
+    font-family: "Artegra Soft Condensed";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.about-tab-txt-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    width: 220px;
+}
+.about-tab-txt-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
 }
 /* .trigger{
       text-align: center;
@@ -145,7 +546,7 @@
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 }
 .modal-img-wrapper {
     border-radius: 48px;
@@ -156,8 +557,10 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 50px;
     width: fit-content;
+    height: 560px;
 }
 .modal-img-content {
     display: flex;
@@ -305,8 +708,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px; /* 125% */
+    border: none;
+    cursor: pointer;
 }
-.card-slider-button a {
+.card-slider-button button {
     width: 100%;
 }
 </style>
