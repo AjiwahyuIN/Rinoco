@@ -56,11 +56,11 @@
                                 </div>
                             </div>
                             <div class="confirm-modal modal-progress" v-if="modalProgress">
-                                <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
+                                <div class="close-button" v-on:click="toggleModalProgress()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
                                 <div class="modal-img-content">
                                     <img class="modal-progress-img" src="../assets/images/Frame 1321315713.png" alt="">
                                     <h2>Adoption in progress</h2>
-                                    <span>Don’t close this page untill this Rinoco successfully adopted</span>
+                                    <span>Don't close this page untill this Rinoco successfully adopted</span>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-value">
