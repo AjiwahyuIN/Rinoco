@@ -37,3 +37,21 @@ section {
   line-height: 20px; /* 125% */
   cursor: pointer;
 }
+.button-white {
+  display: flex;
+  padding: 14px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #FFF;
+  box-shadow: 0px -8px 12px 0px rgba(128, 222, 234, 0.50) inset;
+  width: fit-content;
+  border: none;
+  color: rgba(0, 98, 119, 1);
+  font-family: "Artegra Soft Condensed";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  cursor: pointer;
+}
