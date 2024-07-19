@@ -16,6 +16,20 @@
                     </div>
                 </div>
             </div>
+            <div class="mint-load">
+                <div class="mint-load-header">
+                    <h4>total Rinoco's adopted</h4>
+                    <div class="mint-load-txt">
+                        <h5>790</h5>
+                        <span>/1500</span>
+                    </div>
+                </div>
+                <div class="mint-progress">
+                    <div class="mint-progress-value">
+
+                    </div>
+                </div>
+            </div>
             <div class="modal" v-if="showModal">
                 <div class="modal-content">
                     <div class="modal-tab">
@@ -222,10 +236,77 @@
 </script>
 
 
-
-
-
 <style scoped>
+.mint-load {
+    border-radius: 24px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 64px;
+    margin-bottom: 24px;
+}
+.mint-load-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mint-load-header h4 {
+    color: #304755;
+    text-align: center;
+    font-family: "Yellow Candy";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.mint-load-txt h5 {
+    color: #304755;
+    text-align: right;
+    font-family: "Yellow Candy";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.mint-load-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.mint-progress {
+    min-width: 100%;
+    width: 100%;
+    height: 16px;
+    border-radius: 100px;
+    background: rgba(48, 50, 61, 0.08);
+}
+.mint-progress-value {
+    width: 100%;
+    height: 100%;
+    max-width: 625px;
+    border-radius: 100px;
+    background: linear-gradient(11deg, #2BA7B7 25.24%, #6ACFDC 110.34%);
+}
+.mint-load-txt span {
+    color: rgba(48, 71, 85, 0.50);
+    text-align: right;
+    font-family: "Yellow Candy";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
 .moves-tab {
     border-radius: 32px;
     background: #FFF;
@@ -652,7 +733,7 @@
     background: linear-gradient(180deg, rgb(77, 150, 164) 0%, rgba(112,226,247,1) 60%, rgba(255,255,255,1) 100%);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    /* height: 100vh; */
     margin-top: -100px;
     padding-top: 140px;
 }
