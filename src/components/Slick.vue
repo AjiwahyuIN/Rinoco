@@ -2,7 +2,7 @@
 <script>
 import Slick from 'vue-slick';
 
-new Vue({
+export default{
 
     components: { Slick },
 
@@ -67,7 +67,7 @@ new Vue({
             console.log('handleLazeLoadError', event, slick, image, imageSource);
         },
     },
-});
+};
 
 </script>
 
@@ -87,10 +87,10 @@ new Vue({
         @swipe="handleSwipe"
         @lazyLoaded="handleLazyLoaded"
         @lazyLoadError="handleLazyLoadError">
-        <a href="http://placehold.it/2000x1000"><img src="http://placehold.it/2000x1000" alt=""></a>
-        <a href="http://placehold.it/2000x1000"><img src="http://placehold.it/2000x1000" alt=""></a>
-        <a href="http://placehold.it/2000x1000"><img src="http://placehold.it/2000x1000" alt=""></a>
-        <a href="http://placehold.it/2000x1000"><img src="http://placehold.it/2000x1000" alt=""></a>
-        <a href="http://placehold.it/2000x1000"><img src="http://placehold.it/2000x1000" alt=""></a>
+        <a href="http://placehold.it/200x100"><img src="http://placehold.it/200x100" alt=""></a>
+        <a href="http://placehold.it/200x100"><img src="http://placehold.it/200x100" alt=""></a>
+        <a href="http://placehold.it/200x100"><img src="http://placehold.it/200x100" alt=""></a>
+        <a href="http://placehold.it/200x100"><img src="http://placehold.it/200x100" alt=""></a>
+        <a href="http://placehold.it/200x100"><img src="http://placehold.it/200x100" alt=""></a>
         </slick>
 </template>

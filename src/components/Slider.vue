@@ -2,7 +2,9 @@
     <div class="slider-wrapper">
         <swiper
             :slides-per-view="3"
+            :centered-slides="true"
             :space-between="50"
+            ref="Slider"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
             :loop="true"
@@ -71,8 +73,8 @@
             
             ...
             <div class="slider-nav">
-                <button type="button" @click="swiperPrevSlide"> Prev Slide </button>
-                <button type="button" @click="swiperNextSlide"> Next Slide </button>
+                <button @click="swiperPrevSlide" type="button" > Prev Slide </button>
+                <button @click="swiperNextSlide" type="button" > Next Slide </button>
                 <!-- <div type="button" @click="swiperPrevSlide" class="slider-prev"><img src="../assets/images/Button.svg" alt=""></div>
                 <div type="button" @click="swiperNextSlide" class="slider-next"><img src="../assets/images/Button.svg" alt=""></div> -->
             </div>
@@ -81,22 +83,25 @@
 
 </template>
 
-
 <script>
   // Import Swiper Vue.js components
-  import {defineComponent, ref} from 'vue';
+  import { defineComponent, ref } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { Navigation  } from 'swiper/modules';
+  import { Navigation } from 'swiper/modules';
   import 'swiper/css';
 
 
   // Import Swiper styles
   import 'swiper/css';
 
-  export default {
+  export default defineComponent({
+    name: 'Slider',
     methods: {
         Navigation() {
             return Navigation
+        },
+        next() {
+            this.swiperInstance.slideNext();
         }
     },
     components: {
@@ -104,39 +109,44 @@
       SwiperSlide,
     },
     setup() {
-        const swiperInstance = ref()
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
-      const swiperNextSlide = () => {
-            swiperInstance.value.slideNext()
+        const swiperInstance = ref(null);
+        const onSwiper = (swiper) => {
+            swiperInstance.value = swiper;
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
+        const swiperNextSlide = () => {
+            swiperInstance.value.slideNext();
         };
         const swiperPrevSlide = () => {
-            swiperInstance.value.slidePrev()
+            swiperInstance.value.slidePrev();
         };
-      return {
-        onSwiper,
-        onSlideChange,
-        swiperPrevSlide,
-        swiperNextSlide,
-      };
+        return {
+            onSwiper,
+            onSlideChange,
+            swiperPrevSlide,
+            swiperNextSlide,
+            swiperInstance
+        };
     },
-  };
+  });
 </script>
 
 <style scoped>
-.card-slider-contents {
+/* .card-slider-contents {
     display: none !important;
-}
+} */
 .slider-wrapper {
     width: 100%;
 }
 .slider-nav {
     position: relative;
     z-index: 2;
+}
+.swiper-slide-active .card-slider .card-slider-contents{
+    max-height: 100%;
 }
 .card-slider {
     margin-top: 180px;
@@ -183,6 +193,9 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 200ms ease;
 }
 .card-slider-contents span {
     color: rgba(48, 71, 85, 0.80);
