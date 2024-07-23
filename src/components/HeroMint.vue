@@ -1,9 +1,33 @@
+<script>
+
+  export default{
+    name: 'HeroMint',
+    data(){
+        return{
+            showModal: false,
+            tabState: 1,
+        }
+    },
+    methods: {
+        toggleModal(){
+            this.showModal = !this.showModal
+        },
+        switchTab(state){
+            this.tabState = state
+        },
+    },
+  }
+
+
+</script>
+
 
 <template id="HeroMint">
     <section class="sec-hero-mint">
         <div class="container">
             <div class="hero-mint">
                 <img src="../assets/images/The Rinodex.svg" alt="">
+
                 <div class="card-slider">
                     <img src="../assets/images/item.svg" alt="">
                     <div class="card-slider-content">
@@ -212,29 +236,6 @@
     </section>
     <!-- <Footer/> -->
 </template>
-
-
-
-<script>
-  export default{
-    name: 'HeroMint',
-    data(){
-        return{
-            showModal: false,
-            tabState: 1
-        }
-    },
-    methods: {
-        toggleModal(){
-            this.showModal = !this.showModal
-        },
-        switchTab(state){
-            this.tabState = state
-        }
-    }
-  }
-</script>
-
 
 <style scoped>
 .mint-load {

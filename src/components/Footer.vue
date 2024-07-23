@@ -53,4 +53,10 @@
     justify-content: center;
     gap: 24px;
 }
+@media only screen and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
 </style>

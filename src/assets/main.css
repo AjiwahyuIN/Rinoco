@@ -20,6 +20,16 @@ section {
   padding-inline: 135px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 767px) {
+  .container {
+    padding-inline: 20px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    padding-inline: 20px;
+  }
+}
 .button-yellow {
   display: flex;
   padding: 14px 24px;
@@ -54,4 +64,11 @@ section {
   font-weight: 700;
   line-height: 20px; /* 125% */
   cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .button-yellow {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
 }

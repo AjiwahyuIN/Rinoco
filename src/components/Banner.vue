@@ -94,4 +94,35 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 }
+
+@media only screen and (max-width: 767px) {
+    .banner-content span {
+    font-size: 20px;
+    text-align: center;
+    }
+  .banner-content form {
+    width: 100%;
+    /* width: 280px; */
+    margin: 0 auto;
+  }
+  .banner {
+    padding-block: 40px;
+  }
+  .banner-content {
+    padding: 20px 20px;
+  }
+  .banner-content form input::placeholder {
+    font-size:16px ;
+  }
+  .banner-content form button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+  .top-banner img {
+    max-width: 80px;
+  }
+  .top-banner {
+    max-width: 85%;
+  }
+}
 </style>

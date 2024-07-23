@@ -131,4 +131,40 @@
     background: linear-gradient(358deg, #FB0 21.69%, #FFEEC0 120.62%);
 }
 
+@media only screen and (max-width: 767px) {
+    .sec-hero {
+        padding-bottom: 120px;
+    }
+  .heading-wrapper img{
+    max-width: 300px;
+  }
+  .heading-wrapper h3 {
+    font-size: 20px;
+    margin-bottom: -20px;
+  }
+  .heading-wrapper h3 span {
+    font-size: 20px;
+  }
+  .heading-content {
+    padding: 32px 20px;
+  }
+  .heading-content-wrapper h4 {
+    font-size: 16px;
+  }
+  .heading-content-wrapper h4 span{
+    font-size: 16px;
+  }
+  .hero-button {
+    font-size: 16px;
+    height: unset;
+    gap: 8px;
+    width: 100%;
+  }
+  .hero-button-ic  {
+    padding: 8px;
+  }
+  .hero-button-ic img {
+    max-width: 20px;
+  }
+}
 </style>

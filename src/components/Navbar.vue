@@ -32,6 +32,14 @@ import SupportIcon from './icons/IconSupport.vue'
 </template>
 
 <style scoped>
+@media only screen and (max-width: 767px) {
+    .brand img {
+        max-width: 30px;
+    }
+    .brand span {
+        font-size: 18px !important;
+    }
+}
 .nav-menu {
     display: flex;
     justify-content: center;
@@ -50,6 +58,13 @@ import SupportIcon from './icons/IconSupport.vue'
     padding: 10px 24px;
     text-transform: capitalize;
     border-radius: 100px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-link {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
 }
 .router-link-active.nav-link  {
     background: #FFF;
