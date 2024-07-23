@@ -36,7 +36,9 @@
                     </div>
                     <div class="card-slider-button">
                         <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
-                        <button class="button-yellow">Adopt This</button>
+                        <router-link to="/popup">
+                            <button class="button-yellow">Adopt This</button>
+                        </router-link>
                     </div>
                 </div>
             </div>
