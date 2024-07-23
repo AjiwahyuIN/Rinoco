@@ -5,6 +5,8 @@
             :space-between="50"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
+            :loop="true"
+            :modules="[Navigation]"
         >
             <swiper-slide> 
                 <div class="card-slider">
@@ -68,13 +70,13 @@
             </swiper-slide>
             
             ...
+            <div class="slider-nav">
+                <button type="button" @click="swiperPrevSlide"> Prev Slide </button>
+                <button type="button" @click="swiperNextSlide"> Next Slide </button>
+                <!-- <div type="button" @click="swiperPrevSlide" class="slider-prev"><img src="../assets/images/Button.svg" alt=""></div>
+                <div type="button" @click="swiperNextSlide" class="slider-next"><img src="../assets/images/Button.svg" alt=""></div> -->
+            </div>
         </swiper>
-        <div class="slider-nav">
-            <button type="button" v-on:click="swiperPrevSlide()"> Prev Slide </button>
-            <button type="button" @click="swiperNextSlide"> Prev Slide </button>
-            <!-- <div type="button" @click="swiperPrevSlide" class="slider-prev"><img src="../assets/images/Button.svg" alt=""></div>
-            <div type="button" @click="swiperNextSlide" class="slider-next"><img src="../assets/images/Button.svg" alt=""></div> -->
-        </div>
     </div>
 
 </template>
@@ -126,6 +128,9 @@
 </script>
 
 <style scoped>
+.card-slider-contents {
+    display: none !important;
+}
 .slider-wrapper {
     width: 100%;
 }
@@ -135,11 +140,11 @@
 }
 .card-slider {
     margin-top: 180px;
-    border-radius: 80px;
+    border-radius: 64px;
     border: 1px solid #FFF;
     background: rgba(255, 255, 255, 0.30);
     backdrop-filter: blur(10px);
-    padding: 115px 32px 32px 32px;
+    padding: 65px 24px 24px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,6 +153,7 @@
     position: relative;
 }
 .card-slider img {
+    max-width: 120px;
     position: absolute;
     top: -110px;
     left: 0;
