@@ -1,7 +1,18 @@
 <script>
 
-  export default{
-    name: 'HeroMint',
+
+// Import Swiper Vue.js components
+  import { defineComponent, ref } from 'vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css';
+
+
+  // Import Swiper styles
+  import 'swiper/css';
+
+  export default defineComponent({
+    name: 'Slider',
     data(){
         return{
             showModal: false,
@@ -15,9 +26,41 @@
         switchTab(state){
             this.tabState = state
         },
+        Navigation() {
+            return Navigation
+        },
+        next() {
+            this.swiperInstance.slideNext();
+        }
     },
-  }
-
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+        const swiperInstance = ref(null);
+        const onSwiper = (swiper) => {
+            swiperInstance.value = swiper;
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
+        const swiperNextSlide = () => {
+            swiperInstance.value.slideNext();
+        };
+        const swiperPrevSlide = () => {
+            swiperInstance.value.slidePrev();
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+            swiperPrevSlide,
+            swiperNextSlide,
+            swiperInstance
+        };
+    },
+  });
 
 </script>
 
@@ -28,15 +71,86 @@
             <div class="hero-mint">
                 <img src="../assets/images/The Rinodex.svg" alt="">
 
-                <div class="card-slider">
-                    <img src="../assets/images/item.svg" alt="">
-                    <div class="card-slider-content">
-                        <h4>Aria Windrider</h4>
-                        <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
-                    </div>
-                    <div class="card-slider-button">
-                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
-                        <button class="button-yellow">Adopt This</button>
+                <div class="slider-wrapper">
+                    <swiper
+                        :slides-per-view="3"
+                        :centered-slides="true"
+                        :space-between="50"
+                        ref="Slider"
+                        @swiper="onSwiper"
+                        @slideChange="onSlideChange"
+                        :loop="true"
+                        :modules="[Navigation]"
+                    >
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/item.svg" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Aria Windrider</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/item.svg" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Aria Windrider</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/item.svg" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Aria Windrider</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/item.svg" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Aria Windrider</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        
+                        ...
+                        
+                    </swiper>
+                    <div class="slider-nav">
+                        <div class="slider-nav-btn slider-nav-btn-prev" @click="swiperPrevSlide" type="button" > <img src="../assets/images/Iconly/Bold/Arrow - Right.svg" alt=""> </div>
+                        <div class="slider-nav-btn slider-nav-btn-next" @click="swiperNextSlide" type="button" > <img src="../assets/images/Iconly/Bold/Arrow - Right.svg" alt=""> </div>
+                        <!-- <div type="button" @click="swiperPrevSlide" class="slider-prev"><img src="../assets/images/Button.svg" alt=""></div>
+                        <div type="button" @click="swiperNextSlide" class="slider-next"><img src="../assets/images/Button.svg" alt=""></div> -->
                     </div>
                 </div>
             </div>
@@ -635,6 +749,7 @@
     top: 0;
     width: 100%;
     height: 100%;
+    z-index: 99;
     background: rgba(71, 141, 154, 0.30);
     backdrop-filter: blur(25px);
     /* opacity: 0;
@@ -786,13 +901,25 @@
     justify-content: center;
     align-items: center;
 }
+
+.slider-wrapper {
+    width: 100%;
+    position: relative;
+}
+.slider-wrapper .swiper {
+    max-width: 85%;
+}
+
+.swiper-slide-active .card-slider .card-slider-contents{
+    max-height: 100%;
+}
 .card-slider {
     margin-top: 180px;
-    border-radius: 80px;
+    border-radius: 64px;
     border: 1px solid #FFF;
     background: rgba(255, 255, 255, 0.30);
     backdrop-filter: blur(10px);
-    padding: 115px 32px 32px 32px;
+    padding: 65px 24px 24px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -801,6 +928,7 @@
     position: relative;
 }
 .card-slider img {
+    max-width: 120px;
     position: absolute;
     top: -110px;
     left: 0;
@@ -825,7 +953,16 @@
     line-height: normal;
     text-transform: uppercase;
 }
-.card-slider-content span {
+.card-slider-contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 200ms ease;
+}
+.card-slider-contents span {
     color: rgba(48, 71, 85, 0.80);
     text-align: center;
     text-overflow: ellipsis;
@@ -835,6 +972,7 @@
     font-weight: 400;
     line-height: normal;
 }
+
 .card-slider-button {
     display: flex;
     justify-content: space-between;
@@ -863,5 +1001,34 @@
 .card-slider-button button {
     width: 100%;
 }
+
+.slider-nav-btn {
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(358deg, #FB0 21.69%, #FFEEC0 120.62%);
+    box-shadow: 0px -8px 8px 0px rgba(128, 222, 234, 0.50) inset;
+}
+.slider-nav-btn-prev img {
+    transform: rotate(180deg);
+}
+.slider-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 170px;
+}
+/* .swiper-slide {
+    margin:0  12px !important;
+} */
 </style>
 
