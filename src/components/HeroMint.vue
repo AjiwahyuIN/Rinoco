@@ -75,12 +75,12 @@
                     <swiper
                         :slides-per-view="3"
                         :centered-slides="true"
-                        :space-between="50"
+                        :space-between="24"
                         ref="Slider"
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
                         :loop="true"
-                        :modules="[Navigation]"
+                        :breakpoints="{ 320:{ slidesPerView:1 }, 1024:{ slidesPerView:3, } }"
                     >
                         <swiper-slide> 
                             <div class="card-slider">

@@ -16,7 +16,7 @@
                         <div class="hero-button">
                             Join the community
                             <div class="hero-button-ic">
-                                <img src="../assets/images/Iconly/Bold/Arrow - Right.svg" alt="">
+                                <img src="../assets/images/arrow-white.svg" alt="">
                             </div>
                         </div>
                     </router-link>
