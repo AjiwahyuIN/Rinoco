@@ -82,9 +82,25 @@
                         :loop="true"
                         :breakpoints="{ 320:{ slidesPerView:1 }, 1024:{ slidesPerView:3, } }"
                     >
+                        
                         <swiper-slide> 
                             <div class="card-slider">
-                                <img src="../assets/images/item.svg" alt="">
+                                <img src="../assets/images/Frame 1321315714.png" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Riley Hunter</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/Frame 1321315713.png" alt="">
                                 <div class="card-slider-content">
                                     <h4>Aria Windrider</h4>
                                 </div>
@@ -99,9 +115,9 @@
                         </swiper-slide>
                         <swiper-slide> 
                             <div class="card-slider">
-                                <img src="../assets/images/item.svg" alt="">
+                                <img src="../assets/images/Frame 1321315713k.png" alt="">
                                 <div class="card-slider-content">
-                                    <h4>Aria Windrider</h4>
+                                    <h4>Jasper Frost</h4>
                                 </div>
                                 <div class="card-slider-contents">
                                     <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
@@ -114,24 +130,9 @@
                         </swiper-slide>
                         <swiper-slide> 
                             <div class="card-slider">
-                                <img src="../assets/images/item.svg" alt="">
+                                <img src="../assets/images/Frame 1321315714.png" alt="">
                                 <div class="card-slider-content">
-                                    <h4>Aria Windrider</h4>
-                                </div>
-                                <div class="card-slider-contents">
-                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
-                                    <div class="card-slider-button">
-                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
-                                        <button class="button-yellow">Adopt This</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide> 
-                            <div class="card-slider">
-                                <img src="../assets/images/item.svg" alt="">
-                                <div class="card-slider-content">
-                                    <h4>Aria Windrider</h4>
+                                    <h4>Riley Hunter</h4>
                                 </div>
                                 <div class="card-slider-contents">
                                     <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
@@ -913,6 +914,11 @@
 .swiper-slide-active .card-slider .card-slider-contents{
     max-height: 100%;
 }
+
+.swiper-slide-active .card-slider img {
+    max-width: 160px;
+    margin-top: -30px;
+}
 .card-slider {
     margin-top: 180px;
     border-radius: 64px;
@@ -921,19 +927,21 @@
     backdrop-filter: blur(10px);
     padding: 65px 24px 24px 24px;
     display: flex;
+    /* height: 148px; */
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 16px;
     position: relative;
 }
 .card-slider img {
-    max-width: 120px;
+    max-width: 128px;
     position: absolute;
-    top: -110px;
+    top: -95px;
     left: 0;
     right: 0;
     margin: 0 auto;
+    transition: all 200ms ease ;
 }
 .card-slider-content {
     display: flex;
@@ -941,6 +949,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
+    margin-top: 16px;
     max-width: 340px;
 }
 .card-slider-content h4 {
