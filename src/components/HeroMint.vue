@@ -41,16 +41,44 @@
         const swiperInstance = ref(null);
         const onSwiper = (swiper) => {
             swiperInstance.value = swiper;
-            console.log(swiper);
+            // console.log(swiper);
+            let target = document.querySelector('.swiper-slide-prev').previousElementSibling
+            let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
+            target.classList.add('hide')
+            target2.classList.add('hide')
+            target.previousElementSibling.classList.add('out')
+            target2.previousElementSibling.classList.add('out')
         };
         const onSlideChange = () => {
-            console.log('slide change');
+            // console.log('slide change');
         };
         const swiperNextSlide = () => {
             swiperInstance.value.slideNext();
+            document.querySelectorAll('.swiper-slide').forEach((e)=>{
+                e.classList.remove('hide','out')
+            })
+            setTimeout(()=>{
+                let target = document.querySelector('.swiper-slide-prev').previousElementSibling
+                let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
+                target.classList.add('hide')
+                target2.classList.add('hide')
+                target.previousElementSibling.classList.add('out')
+                target2.nextElementSibling.classList.add('out')
+            },1)
         };
         const swiperPrevSlide = () => {
             swiperInstance.value.slidePrev();
+            document.querySelectorAll('.swiper-slide').forEach((e)=>{
+                e.classList.remove('hide','out')
+            })
+            setTimeout(()=>{
+                let target = document.querySelector('.swiper-slide-prev').previousElementSibling
+                let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
+                target.classList.add('hide')
+                target2.classList.add('hide')
+                target.previousElementSibling.classList.add('out')
+                target2.nextElementSibling.classList.add('out')
+            },1)
         };
         return {
             onSwiper,
@@ -67,20 +95,22 @@
 
 <template id="HeroMint">
     <section class="sec-hero-mint">
-        <div class="container">
+        <div class="container c-mint">
             <div class="hero-mint">
                 <img src="../assets/images/The Rinodex.svg" alt="">
 
                 <div class="slider-wrapper">
                     <swiper
-                        :slides-per-view="3"
+                        :slides-per-view="5"
                         :centered-slides="true"
                         :space-between="24"
                         ref="Slider"
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
                         :loop="true"
-                        :breakpoints="{ 320:{ slidesPerView:1 }, 1024:{ slidesPerView:3, } }"
+                        :draggable="false"
+                        :allowTouchMove="false"
+                        :breakpoints="{ 320:{ slidesPerView:1 }, 1024:{ slidesPerView:5, } }"
                     >
                         
                         <swiper-slide> 
@@ -118,6 +148,36 @@
                                 <img src="../assets/images/Frame 1321315713k.png" alt="">
                                 <div class="card-slider-content">
                                     <h4>Jasper Frost</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/Frame 1321315714.png" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Riley Hunter</h4>
+                                </div>
+                                <div class="card-slider-contents">
+                                    <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
+                                    <div class="card-slider-button">
+                                        <button class="btn-details trigger" v-on:click="toggleModal()" >Details</button>
+                                        <button class="button-yellow">Adopt This</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide> 
+                            <div class="card-slider">
+                                <img src="../assets/images/Frame 1321315714.png" alt="">
+                                <div class="card-slider-content">
+                                    <h4>Riley Hunter</h4>
                                 </div>
                                 <div class="card-slider-contents">
                                     <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt aute irure dolor in reprehenderit in voluptate</span>
@@ -353,6 +413,10 @@
 </template>
 
 <style scoped>
+.c-mint {
+    max-width: 1440px;
+    padding-inline: 0px !important;
+}
 .mint-load {
     border-radius: 24px;
     border: 1px solid #FFF;
@@ -908,11 +972,12 @@
     position: relative;
 }
 .slider-wrapper .swiper {
-    max-width: 85%;
+    max-width: 100%;
+    height: 500px;
 }
 
 .swiper-slide-active .card-slider .card-slider-contents{
-    max-height: 100%;
+    max-height: 160px;
 }
 
 .swiper-slide-active .card-slider img {
@@ -932,7 +997,9 @@
     justify-content: flex-end;
     align-items: center;
     gap: 16px;
-    position: relative;
+    position: absolute;
+    width: 240px;
+    transition: all 200ms ease;
 }
 .card-slider img {
     max-width: 128px;
@@ -1027,6 +1094,8 @@
 }
 .slider-nav {
     width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1036,8 +1105,63 @@
     right: 0;
     bottom: 170px;
 }
+/* .swiper-slide-prev .card-slider {
+    opacity: 0.2;
+} */
+.swiper-slide.swiper-slide-active .card-slider{
+    transform: scale(1);
+    width: 400px;
+}
+.swiper-slide.swiper-slide-prev{
+    transform: translateX(-75px) scale(0.9);
+}
+.swiper-slide.swiper-slide-next{
+    transform: translateX(75px) scale(0.9);
+}
+.swiper-slide{
+    transition: all 200ms ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.swiper-slide.hide{
+    opacity: 0.2 !important;
+    transform: translateY(-75px) scale(0.6);
+}
+.swiper-slide.out{
+    opacity: 0 !important;
+    transform: translateY(-95px) scale(0.5);
+}
+/* .swiper-slide-next .card-slider {
+    opacity: 0.2;
+} */
 /* .swiper-slide {
     margin:0  12px !important;
+} */
+
+/* .swiper-wrapper .swiper-slide:nth-child(2) .card-slider {
+    opacity: 0.2 !important;
+    transform: translateX(-75px);
+    transform: translateY(-75px);
+    transition: all 200ms ease;
+}
+.swiper-wrapper .swiper-slide:nth-last-child(1) .card-slider {
+    opacity: 0.2 !important;
+    transform: translateX(-75px);
+    transform: translateY(-75px);
+    transition: all 200ms ease;
+}
+.swiper-wrapper .swiper-slide:nth-child(-2) .card-slider {
+    opacity: 0.2 !important;
+    transform: translateX(-75px);
+    transform: translateY(-75px);
+    transition: all 200ms ease;
+}
+.swiper-wrapper .swiper-slide:nth-last-child(-1) .card-slider {
+    opacity: 0.2 !important;
+    transform: translateX(-75px);
+    transform: translateY(-75px);
+    transition: all 200ms ease;
 } */
 </style>
 
