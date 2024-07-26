@@ -19,6 +19,9 @@
             tabState: 1,
         }
     },
+    mounted() {
+    AOS.init()
+    },
     methods: {
         toggleModal(){
             this.showModal = !this.showModal
@@ -97,7 +100,7 @@
     <section class="sec-hero-mint">
         <div class="container c-mint">
             <div class="hero-mint">
-                <img src="../assets/images/The Rinodex.svg" alt="">
+                <img data-aos="fade-up" data-aos-duration="400" src="../assets/images/The Rinodex.svg" alt="">
 
                 <div class="slider-wrapper">
                     <swiper
@@ -701,14 +704,17 @@
 }
 .tab-content {
     display: none;
+    opacity: 0;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 16px;
     padding-top: 32px;
+    transition: all 200ms ease;
 }
 .tab-content.current {
     display: flex;
+    opacity: 1;
 }
 .about-tab {
     display: flex;

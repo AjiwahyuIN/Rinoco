@@ -7,8 +7,8 @@
                     <img src="../assets/images/kon.png" alt="" width="112px">
                 </div>
                 <div class="banner-content">
-                    <span>Check if your wallet is registered in our system</span>
-                    <form action="">
+                    <span data-aos="fade-up" data-aos-duration="400">Check if your wallet is registered in our system</span>
+                    <form action="" data-aos="fade-up" data-aos-duration="800">
                         <input type="text" placeholder="Enter wallet here...">
                         <button type="submit">Enter</button>
                     </form>

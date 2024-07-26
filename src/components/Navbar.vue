@@ -10,7 +10,7 @@ import SupportIcon from './icons/IconSupport.vue'
 <template>
     <section>
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
                 <router-link to="/" class="brand">
                     <img src="../assets/images/brand.svg" alt="">
                     <span>Rinoco</span>
