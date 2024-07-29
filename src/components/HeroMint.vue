@@ -397,7 +397,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <a href="#" class="button-yellow btn-back-mobile">Back</a>
                     </div>
                     <div class="modal-img-wrapper">
                         <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
@@ -406,7 +406,10 @@
                             <h2>Aria Windrider</h2>
                             <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.</span>
                         </div>
-                        <a href="#" class="button-yellow">Choose this character</a>
+                        <div class="modal-btn-wrapper">
+                            <a href="#" class="button-yellow">Choose this character</a>
+                            <a href="#" class="button-yellow btn-details-mobile">Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -416,6 +419,31 @@
 </template>
 
 <style scoped>
+.modal-btn-wrapper {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+.btn-details-mobile {
+    background: #fff;
+    color: #304755;
+    display: none;
+}
+.btn-back-mobile {
+    background: #fff;
+    color: #304755;
+    display: none;
+}
+@media only screen and (max-width: 767px) {
+  .btn-details-mobile {
+    display: flex;
+  }
+  .btn-back-mobile {
+    display: flex;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
 .c-mint {
     max-width: 1440px;
     padding-inline: 0px !important;
@@ -663,6 +691,7 @@
     padding: 24px;
     min-width: 572px;
     min-height: 100%;
+    position: relative;
 }
 .modal-tab-btn {
     border-radius: 100px;
@@ -850,10 +879,13 @@
         width: 100%;
         min-width: 100%;
         padding: 20px 16px;
-        display: none;
+        display: flex;
+        flex-direction: column;
+        transition: all 200ms ease;
     }
     .modal-img-wrapper {
         padding: 20px;
+        display: none !important;
         height: unset !important;
     }
     .modal-img-content img {
@@ -872,15 +904,38 @@
     }
     .about-tab-txt-wrapper {
         flex-direction: column;
+        gap: 12px;
     }
-    .about-tab {
-        padding: 20px;
+    .about-tab,.base-tab,.moves-tab {
+        padding: 16px;
+        border-radius: 24px;
     }
-    .about-tab h4 {
-        font-size: 18px;
+    .about-tab h4, .base-tab h4, .moves-heading h4 {
+        font-size: 16px;
     }
     .about-tab-txt-left h5 {
         font-size: 14px !important;
+    }
+    .about-tab-txt-left span {
+        font-size: 12px;
+    }
+    .about-tab-txt-right h5 {
+        font-size: 14px !important;
+    }
+    .about-tab-txt-right span {
+        font-size: 12px;
+    }
+    .base-content-wrapper span {
+        font-size: 14px !important;
+    }
+    .moves-content-txt span {
+        font-size: 14px;
+    }
+    .moves-content-txt h3 {
+        font-size: 20px;
+    }
+    .moves-banner {
+        font-size: 14px;
     }
 }
 .modal-img-wrapper {
@@ -943,9 +998,11 @@
     padding: 12px;
     background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(358deg, #FB0 21.69%, #FFEEC0 120.62%);
     box-shadow: 0px -8px 8px 0px rgba(128, 222, 234, 0.50) inset;
+    transition: all 200ms ease;
 }
 .close-button:hover {
     background-color: darkgray;
+    transform: scale(1.1);
 }
 /* .show-modal {
     opacity: 1;

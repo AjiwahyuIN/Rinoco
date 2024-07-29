@@ -53,6 +53,13 @@
     justify-content: center;
     gap: 24px;
 }
+.footer-ic a {
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.footer-ic a:hover {
+    transform: scale(1.1);
+}
 @media only screen and (max-width: 767px) {
     .footer {
         flex-direction: column;

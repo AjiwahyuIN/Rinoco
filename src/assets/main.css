@@ -46,7 +46,9 @@ section {
   font-weight: 700;
   line-height: 20px; /* 125% */
   cursor: pointer;
+  transition: all 200ms ease;
 }
+
 .button-white {
   display: flex;
   padding: 14px 24px;
