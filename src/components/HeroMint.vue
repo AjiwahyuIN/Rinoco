@@ -17,13 +17,17 @@
         return{
             showModal: false,
             tabState: 1,
-            isActive:true
+            isActive:true,
+            showLayout1: true
         }
     },
     mounted() {
     AOS.init()
     },
     methods: {
+        toggleLayout() {
+            this.showLayout1 = !this.showLayout1; // Toggle status layout
+        },
         toggleText() {
         this.display = !this.display;
         },
@@ -239,7 +243,7 @@
             </div>
             <div class="modal" v-if="showModal">
                 <div class="modal-content">
-                    <div class="modal-tab">
+                    <div class="modal-tab" v-if="showLayout1">
                         <div id="tabs" class="modal-tab-btn">
                             <button :class="tabState == 1 ? 'current' : ''" data-tab="tab-1" v-on:click="switchTab(1)">About</button>
                             <button :class="tabState == 2 ? 'current' : ''" data-tab="tab-2" v-on:click="switchTab(2)">Base Stats</button>
@@ -402,9 +406,9 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="button-yellow btn-back-mobile">Back</a>
+                        <a href="#" class="button-yellow btn-back-mobile" @click="toggleLayout">Back</a>
                     </div>
-                    <div class="modal-img-wrapper">
+                    <div class="modal-img-wrapper" v-else>
                         <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
                         <div class="modal-img-content">
                             <img src="../assets/images/Frame 1321315713.png" alt="">
@@ -413,7 +417,7 @@
                         </div>
                         <div class="modal-btn-wrapper">
                             <a href="#" class="button-yellow">Choose this character</a>
-                            <a href="#" class="button-yellow btn-details-mobile">Details</a>
+                            <a href="#" class="button-yellow btn-details-mobile" @click="toggleLayout">Details</a>
                         </div>
                     </div>
                 </div>
@@ -887,7 +891,7 @@
         width: 100%;
         min-width: 100%;
         padding: 20px 16px;
-        display: none;
+        display: flex;
         flex-direction: column;
         transition: all 200ms ease;
     }

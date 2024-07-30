@@ -5,6 +5,7 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+import  '../style/component/Navbar.css'
 </script>
 
 <template>
@@ -31,65 +32,3 @@ import SupportIcon from './icons/IconSupport.vue'
     </section>
 </template>
 
-<style scoped>
-@media only screen and (max-width: 767px) {
-    .brand img {
-        max-width: 30px;
-    }
-    .brand span {
-        font-size: 18px !important;
-    }
-}
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.20);
-    padding: 4px;
-}
-.nav-link {
-    color: #FFF;
-    font-family: "Artegra Soft Condensed";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px; /* 125% */
-    padding: 10px 24px;
-    text-transform: capitalize;
-    border-radius: 100px;
-}
-
-@media only screen and (max-width: 767px) {
-    .nav-link {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-}
-.router-link-active.nav-link  {
-    background: #FFF;
-    box-shadow: 0px -8px 8px 0px rgba(128, 222, 234, 0.50) inset;
-    color: #006277;
-    font-weight: 700;
-}
-.navbar {
-    padding-block: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.brand {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-}
-.brand span {
-    color: #FFF;
-    font-family: "Yellow Candy";
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-</style>
