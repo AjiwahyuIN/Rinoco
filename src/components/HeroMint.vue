@@ -17,12 +17,16 @@
         return{
             showModal: false,
             tabState: 1,
+            isActive:true
         }
     },
     mounted() {
     AOS.init()
     },
     methods: {
+        toggleText() {
+        this.display = !this.display;
+        },
         toggleModal(){
             this.showModal = !this.showModal
         },
@@ -217,6 +221,7 @@
                         <div type="button" @click="swiperNextSlide" class="slider-next"><img src="../assets/images/Button.svg" alt=""></div> -->
                     </div>
                 </div>
+                <button class="button-yellow">Adopt a Rinoco</button>
             </div>
             <div class="mint-load">
                 <div class="mint-load-header">
@@ -419,6 +424,9 @@
 </template>
 
 <style scoped>
+.modal-img-wrapper.current {
+    display: flex;
+}
 .modal-btn-wrapper {
     display: flex;
     gap: 16px;
@@ -879,13 +887,13 @@
         width: 100%;
         min-width: 100%;
         padding: 20px 16px;
-        display: flex;
+        display: none;
         flex-direction: column;
         transition: all 200ms ease;
     }
     .modal-img-wrapper {
         padding: 20px;
-        display: none !important;
+        display: flex;
         height: unset !important;
     }
     .modal-img-content img {
