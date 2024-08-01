@@ -18,7 +18,8 @@
             showModal: false,
             tabState: 1,
             isActive:true,
-            showLayout1: false
+            showLayout1: true,
+            showLayout2: true
         }
     },
     mounted() {
@@ -27,7 +28,8 @@
     methods: {
         toggleLayout() {
             if (this.isMobile()) {
-                this.showLayout1 = !this.showLayout1; // Toggle status layout
+                this.showLayout1 = !this.showLayout1;
+                this.showLayout2 = !this.showLayout2;
                 console.log('Fungsi iki aktif ing tampilan mobile!');
             } else {
                 console.log('Iki ora aktif ing tampilan mobile.');
@@ -38,6 +40,10 @@
         },
         toggleModal(){
             this.showModal = !this.showModal
+            if(this.showModal == false){
+                this.showLayout2 = this.isMobile() ? false : true
+                this.showLayout1 = true
+            }
         },
         switchTab(state){
             this.tabState = state
@@ -47,63 +53,75 @@
         },
         next() {
             this.swiperInstance.slideNext();
-        },
-        isMobile() {
-            return window.innerWidth <= 768;
-        },
+        }
     },
     components: {
       Swiper,
       SwiperSlide,
     },
+    created: function () {
+        if(this.isMobile()){
+            this.showLayout2 = false;
+        }
+    },
     setup() {
+        const isMobile = () => {
+            return window.innerWidth <= 768;
+        }
         const swiperInstance = ref(null);
         const onSwiper = (swiper) => {
             swiperInstance.value = swiper;
             // console.log(swiper);
-            let target = document.querySelector('.swiper-slide-prev').previousElementSibling
-            let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
-            target.classList.add('hide')
-            target2.classList.add('hide')
-            target.previousElementSibling.classList.add('out')
-            target2.previousElementSibling.classList.add('out')
+            if (!isMobile()) {
+                let target = document.querySelector('.swiper-slide-prev').previousElementSibling
+                let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
+                target.classList.add('hide')
+                target2.classList.add('hide')
+                target.previousElementSibling.classList.add('out')
+                target2.previousElementSibling.classList.add('out')
+            }
         };
         const onSlideChange = () => {
             // console.log('slide change');
         };
         const swiperNextSlide = () => {
             swiperInstance.value.slideNext();
-            document.querySelectorAll('.swiper-slide').forEach((e)=>{
-                e.classList.remove('hide','out')
-            })
-            setTimeout(()=>{
-                let target = document.querySelector('.swiper-slide-prev').previousElementSibling
-                let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
-                target.classList.add('hide')
-                target2.classList.add('hide')
-                target.previousElementSibling.classList.add('out')
-                target2.nextElementSibling.classList.add('out')
-            },1)
+            if (!isMobile()) {
+                document.querySelectorAll('.swiper-slide').forEach((e)=>{
+                    e.classList.remove('hide','out')
+                })
+                setTimeout(()=>{
+                    let target = document.querySelector('.swiper-slide-prev').previousElementSibling
+                    let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
+                    target.classList.add('hide')
+                    target2.classList.add('hide')
+                    target.previousElementSibling.classList.add('out')
+                    target2.nextElementSibling.classList.add('out')
+                },1)
+            }
         };
         const swiperPrevSlide = () => {
             swiperInstance.value.slidePrev();
-            document.querySelectorAll('.swiper-slide').forEach((e)=>{
-                e.classList.remove('hide','out')
-            })
-            setTimeout(()=>{
-                let target = document.querySelector('.swiper-slide-prev').previousElementSibling
-                let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
-                target.classList.add('hide')
-                target2.classList.add('hide')
-                target.previousElementSibling.classList.add('out')
-                target2.nextElementSibling.classList.add('out')
-            },1)
+            if (!isMobile()) {
+                document.querySelectorAll('.swiper-slide').forEach((e)=>{
+                    e.classList.remove('hide','out')
+                })
+                setTimeout(()=>{
+                    let target = document.querySelector('.swiper-slide-prev').previousElementSibling
+                    let target2 = document.querySelector('.swiper-slide-next').nextElementSibling
+                    target.classList.add('hide')
+                    target2.classList.add('hide')
+                    target.previousElementSibling.classList.add('out')
+                    target2.nextElementSibling.classList.add('out')
+                },1)
+            }
         };
         return {
             onSwiper,
             onSlideChange,
             swiperPrevSlide,
             swiperNextSlide,
+            isMobile,
             swiperInstance
         };
     },
@@ -251,19 +269,8 @@
             </div>
             <div class="modal" v-if="showModal">
                 <div class="modal-content">
-                    <div class="modal-img-wrapper" v-if="showLayout1">
-                        <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
-                        <div class="modal-img-content">
-                            <img src="../assets/images/Frame 1321315713.png" alt="">
-                            <h2>Aria Windrider</h2>
-                            <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.</span>
-                        </div>
-                        <div class="modal-btn-wrapper">
-                            <a href="#" class="button-yellow">Choose this character</a>
-                            <a href="#" class="button-yellow btn-details-mobile" @click="toggleLayout">Details</a>
-                        </div>
-                    </div>
-                    <div class="modal-tab" v-else >
+                    
+                    <div class="modal-tab" v-if="showLayout2" >
                         <div id="tabs" class="modal-tab-btn">
                             <button :class="tabState == 1 ? 'current' : ''" data-tab="tab-1" v-on:click="switchTab(1)">About</button>
                             <button :class="tabState == 2 ? 'current' : ''" data-tab="tab-2" v-on:click="switchTab(2)">Base Stats</button>
@@ -426,9 +433,21 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="button-yellow btn-back-mobile" @click="toggleLayout">Back</a>
+                        <a href="#" v-if="!showLayout1" class="button-yellow btn-back-mobile" @click="toggleLayout">Back</a>
                     </div>
-                    
+                    <div class="modal-img-wrapper" v-if="showLayout1">
+                        <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
+                        <div class="modal-img-content">
+                            <img src="../assets/images/Frame 1321315713.png" alt="">
+                            <h2>Aria Windrider</h2>
+                            <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.</span>
+                        </div>
+                        <div class="modal-btn-wrapper">
+                            <a href="#" class="button-yellow">Choose this character</a>
+                            <a href="#" class="button-yellow btn-details-mobile" @click="toggleLayout">Details</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
