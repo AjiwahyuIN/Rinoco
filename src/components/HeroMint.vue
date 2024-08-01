@@ -957,7 +957,7 @@
     backdrop-filter: blur(100px);
     position: relative;
     padding: 24px;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
