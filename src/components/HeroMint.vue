@@ -18,7 +18,7 @@
             showModal: false,
             tabState: 1,
             isActive:true,
-            showLayout1: true
+            showLayout1: false
         }
     },
     mounted() {
@@ -26,7 +26,12 @@
     },
     methods: {
         toggleLayout() {
-            this.showLayout1 = !this.showLayout1; // Toggle status layout
+            if (this.isMobile()) {
+                this.showLayout1 = !this.showLayout1; // Toggle status layout
+                console.log('Fungsi iki aktif ing tampilan mobile!');
+            } else {
+                console.log('Iki ora aktif ing tampilan mobile.');
+            }
         },
         toggleText() {
         this.display = !this.display;
@@ -42,7 +47,10 @@
         },
         next() {
             this.swiperInstance.slideNext();
-        }
+        },
+        isMobile() {
+            return window.innerWidth <= 768;
+        },
     },
     components: {
       Swiper,
@@ -243,7 +251,19 @@
             </div>
             <div class="modal" v-if="showModal">
                 <div class="modal-content">
-                    <div class="modal-tab" v-if="showLayout1">
+                    <div class="modal-img-wrapper" v-if="showLayout1">
+                        <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
+                        <div class="modal-img-content">
+                            <img src="../assets/images/Frame 1321315713.png" alt="">
+                            <h2>Aria Windrider</h2>
+                            <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.</span>
+                        </div>
+                        <div class="modal-btn-wrapper">
+                            <a href="#" class="button-yellow">Choose this character</a>
+                            <a href="#" class="button-yellow btn-details-mobile" @click="toggleLayout">Details</a>
+                        </div>
+                    </div>
+                    <div class="modal-tab" v-else >
                         <div id="tabs" class="modal-tab-btn">
                             <button :class="tabState == 1 ? 'current' : ''" data-tab="tab-1" v-on:click="switchTab(1)">About</button>
                             <button :class="tabState == 2 ? 'current' : ''" data-tab="tab-2" v-on:click="switchTab(2)">Base Stats</button>
@@ -408,18 +428,7 @@
                         </div>
                         <a href="#" class="button-yellow btn-back-mobile" @click="toggleLayout">Back</a>
                     </div>
-                    <div class="modal-img-wrapper" v-else>
-                        <div class="close-button" v-on:click="toggleModal()"><img src="../assets/images/heroicons-outline/x-mark.svg" alt=""></div>
-                        <div class="modal-img-content">
-                            <img src="../assets/images/Frame 1321315713.png" alt="">
-                            <h2>Aria Windrider</h2>
-                            <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.</span>
-                        </div>
-                        <div class="modal-btn-wrapper">
-                            <a href="#" class="button-yellow">Choose this character</a>
-                            <a href="#" class="button-yellow btn-details-mobile" @click="toggleLayout">Details</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -445,6 +454,12 @@
     background: #fff;
     color: #304755;
     display: none;
+}
+@media only screen and (min-width: 768px) {
+    .modal-tab {
+        display: flex !important;
+        visibility: visible !important;
+    }
 }
 @media only screen and (max-width: 767px) {
   .btn-details-mobile {
@@ -704,6 +719,8 @@
     min-width: 572px;
     min-height: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .modal-tab-btn {
     border-radius: 100px;
