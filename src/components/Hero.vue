@@ -1,19 +1,23 @@
+<script setup>
+import "../style/component/Hero.css"
+</script>
+
 <template>
     <section class="sec-hero">
         <div class="container">
             <div class="heading-wrapper">
-                <h3 data-aos="fade-up" data-aos-duration="1400">Welcome to the <span>world</span> of</h3>
-                <img data-aos="fade-up" data-aos-duration="1000" src="../assets/images/Rinoco.svg" alt="">
+                <h3>Welcome to the <span>world</span> of</h3>
+                <img src="../assets/images/Rinoco.svg" alt="">
 
             </div>
             <div class="heading-content">
                 <div class="heading-content-wrapper">
-                    <h4 data-aos="fade-up" data-aos-duration="1600">Join us on a journey through a vast and breathtaking realm inhabited by the extraordinary creatures known as Rinocos. These magnificent beings come in a dazzling array of types and species—some are friendly, others more formidable, ranging from the tiniest critters to colossal giants.</h4>
-                    <h4 data-aos="fade-up" data-aos-duration="1600">One thing is certain:<span> the world of Rinoco</span> is brimming with adventure and wonders just waiting to be discovered. Explore, encounter, and immerse yourself in the magical experiences this enchanting world has to offer.</h4>
+                    <h4>Join us on a journey through a vast and breathtaking realm inhabited by the extraordinary creatures known as Rinocos. These magnificent beings come in a dazzling array of types and species—some are friendly, others more formidable, ranging from the tiniest critters to colossal giants.</h4>
+                    <h4>One thing is certain:<span> the world of Rinoco</span> is brimming with adventure and wonders just waiting to be discovered. Explore, encounter, and immerse yourself in the magical experiences this enchanting world has to offer.</h4>
                 </div>
                 <div class="hero-button-wrapper">
                     <router-link to="/">
-                        <div data-aos="fade-up" data-aos-duration="1800" class="hero-button">
+                        <div class="hero-button">
                             Join the community
                             <div class="hero-button-ic">
                                 <img src="../assets/images/arrow-white.svg" alt="">
@@ -25,146 +29,3 @@
         </div>
     </section>
 </template>
-
-<style scoped>
-.sec-hero {
-    background-image: url('../assets/images/Page Container.png');
-    background-position: bottom center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 430px;
-    padding-top: 100px;
-    margin-top: -100px;
-}
-.heading-wrapper {
-    padding-top: 64px;
-    position: relative;
-    width: fit-content;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end !important;
-
-}
-.heading-wrapper h3{
-    color: #FFF;
-    font-family: "Artegra Soft Condensed";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: -40px;
-}
-
-.heading-wrapper h3 span {
-    background: linear-gradient(358deg, #FB0 21.69%, #FFEEC0 120.62%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Artegra Soft Condensed";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.heading-content {
-    border-radius: 48px;
-    border: 1px solid #FFF;
-    background: rgba(255, 255, 255, 0.30);
-    backdrop-filter: blur(10px);
-    padding: 40px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    margin-top: 16px;
-}
-.heading-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-.heading-content-wrapper h4 {
-    color: #004958;
-    text-align: center;
-    font-family: "Artegra Soft Condensed";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-.heading-content-wrapper h4 span {
-    color: #004958;
-    text-align: center;
-    font-family: "Artegra Soft Condensed";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
-.hero-button {
-    display: flex;
-    height: 80px;
-    padding: 12px 12px 12px 32px;
-    align-items: center;
-    gap: 24px;
-    color: #30323D;
-    font-family: "Artegra Soft Condensed";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    border-radius: 100px;
-    background: #FFF;
-}
-.hero-button-ic {
-    display: flex;
-    padding: 14px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 100px;
-    background: linear-gradient(358deg, #FB0 21.69%, #FFEEC0 120.62%);
-}
-
-@media only screen and (max-width: 767px) {
-    .sec-hero {
-        padding-bottom: 120px;
-    }
-  .heading-wrapper img{
-    max-width: 300px;
-  }
-  .heading-wrapper h3 {
-    font-size: 20px;
-    margin-bottom: -20px;
-  }
-  .heading-wrapper h3 span {
-    font-size: 20px;
-  }
-  .heading-content {
-    padding: 32px 20px;
-  }
-  .heading-content-wrapper h4 {
-    font-size: 16px;
-  }
-  .heading-content-wrapper h4 span{
-    font-size: 16px;
-  }
-  .hero-button {
-    font-size: 16px;
-    height: unset;
-    gap: 8px;
-    width: 100%;
-  }
-  .hero-button-ic  {
-    padding: 8px;
-  }
-  .hero-button-ic img {
-    max-width: 20px;
-  }
-}
-</style>
