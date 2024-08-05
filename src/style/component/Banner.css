@@ -89,6 +89,9 @@ line-height: normal;
   }
   .banner-content {
     padding: 20px 20px;
+    background:url("../../assets/images/Bg2.svg"), #6ACEE0;
+    background-size: contain;
+
   }
   .banner-content form input::placeholder {
     font-size:16px ;
